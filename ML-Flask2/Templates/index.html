@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Car price Prediction</title>
+  <style>
+    body {
+      /* background-image: url('/static/img/car2.jpg'); */
+      background-color: rgb(168, 238, 238);
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    h1 {
+      text-align: center; /* center align the text */
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    p {
+      color: rgb(16, 16, 16);
+      text-align: center;
+      font-size: 22px;
+    }
+  </style>
+</head>
+<body>
+  <div class="login">
+    <h1>CAR PRICE PREDICTION</h1><br><br>
+    <form action="{{ url_for('predict')}}" method="post">
+      <input type="text" name="Year" placeholder="Enter the year"><br><br>
+      <input type="text" name="Present_Price" placeholder="Present price of the car"><br><br>
+      <input type="text" name="Kms_Driven" placeholder="kilometers driven"><br><br>
+      <input type="text" name="Owner" placeholder="No of owners exchanged"><br><br>
+      <input type="text" name="Fuel_Type_n" placeholder="(1 Diesel:2 Petrol)"><br><br>
+      <input type="text" name="Transmission_n" placeholder="(1 Manual:2 Automatic)"><br><br>
+      <input type="submit">
+      <br>
+      <br>
+      
+      <p>{{ prediction_text }}</p>
+    </form>
+  </div>
+</body>
+</html>
